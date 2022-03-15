@@ -22,3 +22,24 @@ code {
 .debug {
   border: 3px solid red;
 }
+
+.CardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardBody {
+  border: 1px solid white;
+  border-radius: 0.5rem;
+}
+
+.buttonsAction {
+  display: flex;
+  justify-content: space-evenly;
+}
