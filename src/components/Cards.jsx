@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Cards = ({ item, setTodoItem }) => {
+const Cards = ({ item, setTodoItem, todos, setTodos }) => {
   const handleEdit = (todo) => {
     console.log("todo edit: ", todo);
     setTodoItem(todo);
+  };
+
+  const deleteItem = (id) => {
+    const arrayFilter = todos.filter((item) => item.id !== id);
+    setTodos(arrayFilter);
+    // console.log(arrayFilter);
   };
 
   return (
@@ -22,7 +28,12 @@ const Cards = ({ item, setTodoItem }) => {
           >
             Editar
           </button>
-          <button className="btn btn-danger my-2">Eliminar</button>
+          <button
+            className="btn btn-danger my-2"
+            onClick={() => deleteItem(item.id)}
+          >
+            Eliminar
+          </button>
         </div>
       </div>
     </>
